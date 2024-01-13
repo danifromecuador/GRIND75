@@ -1,3 +1,7 @@
+# @param {Integer[]} nums
+# @param {Integer} target
+# @return {Integer}
+
 def search(nums, target)
   min = 0
   max = nums.size-1
