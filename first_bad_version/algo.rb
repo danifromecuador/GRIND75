@@ -12,7 +12,7 @@ def is_bad_version(n)
 end
 
 def first_bad_version(n)
-  return n if is_bad_version(n)
+  return n if is_bad_version(n) && !is_bad_version(n-1)
 
   
   
@@ -20,4 +20,4 @@ def first_bad_version(n)
       
 end
 
-p first_bad_version(10)
+p first_bad_version(4)
