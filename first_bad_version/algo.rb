@@ -6,18 +6,22 @@
 # @param {Integer} n
 # @return {Integer}
 
-def is_bad_version(n)
-  return true if n == 4
-  return false if n == 3
-end
-
 def first_bad_version(n)
-  return n if is_bad_version(n) && !is_bad_version(n-1)
+  left = 1
+  right = n
 
-  
-  
-  
-      
+  while left < right
+    mid = left + (right - left) / 2
+
+    if isBadVersion(mid)
+      # If the current version is bad, search in the left half
+      right = mid
+    else
+      # If the current version is not bad, search in the right half
+      left = mid + 1
+    end
+  end
+
+  # At this point, left and right converge to the first bad version
+  left
 end
-
-p first_bad_version(4)
